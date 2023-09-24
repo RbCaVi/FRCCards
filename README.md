@@ -57,6 +57,8 @@ A Robot card may only be played if there are students in the Student Body with s
 When a Robot card is played, the students used to create it are placed under it and form its Drive Team.
 When a Robot card is retired, one student in the Drive Team must be retired as well. The remaining students on the Drive Team are returned to the Student Body.
 
+When a Robot card is played, it can be in offensive or defensive position.
+
 Robots are used for scoring.
 
 
@@ -69,7 +71,7 @@ You may have as many other cards as you want, but you may not have more than thr
 
 Gameplay:
 At the beginning of a game of FRC: The Card Game, each player is assigned 4000 points and begins the game with playing their team card as well as drawing 4 cards from the top of their deck. A coin is flipped to determine whose turn goes first.
-The player who goes first skips the draw and scoring phases of their first turn
+The player who goes first skips the draw and scoring phases of their first turn.
 
 Each turn of FRC: The Card Game has 5 phases:
 - Draw
@@ -79,23 +81,24 @@ Each turn of FRC: The Card Game has 5 phases:
 - End
 
 ### Draw Phase
-During the Draw phase, a Player may draw a single card from the top of their deck (unless otherwise stated)
+During the Draw phase, a player must draw a single card from the top of their deck (unless otherwise stated).
+If a player is unable to draw a card, they lose.
 
 ### Median Phase
 Nothing occurs during the Median phase unless a card's effect specifically states that it starts during the median phase of a player’s turn.
 
 ### Main Phase
-During the Main phase of a player’s turn, the player may lay cards on their side of the playing field. The player may play any number of Mentor and/or event cards assuming there are open places on the field for them. Only one student card may be played per turn (unless otherwise stated). You are allowed to play as many robot cards as you want on your turn so long as its build requirements are met and there is an open space for it on the playing field.
+During the Main phase of a player’s turn, the player may play cards on their side of the playing field. The player may play any number of Mentor and/or event cards assuming there are open places on the field for them. Only one student card may be played per turn (unless otherwise stated). You are allowed to play as many robot cards as you want on your turn so long as their build requirements are met and there are open space for them on the playing field.
+
+Robots can also be switched between offensive and defensive positions in the Main phase.
 
 ### Scoring Phase
 During the Scoring phase, a player may choose to play offense against the opposing player with the following rules:
 You must have a Robot(s) on the field which is capable of scoring and is in an offensive position.
 
-Each Robot may attack once in a turn.
+Each Robot may score once in a turn.
 
 A Robot can score on one opposing Robot.
-
-You may score on any robot on your opponent's side of the field
 
 If you score on an opponent’s robot that is in an offensive position and your robot’s offensive stat is higher than their offense, their robot is retired and the difference of the two robot’s offense stats is subtracted from the other player’s points.
 
