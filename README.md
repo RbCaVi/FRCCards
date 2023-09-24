@@ -17,22 +17,100 @@ There are five types of cards:
 All cards in FRC: The Card Game share a few features:
 - Name
 - Photo
-- Description
+- Description and Effects
 - Tag and Border
   - The type of a card is indicated by its border and tag color and the letter in the tag.
 
 ## Team Cards
 Team cards have a blue border and a `T` in their tag. All Team cards have an effect.
 
-A Team card may only be played at the beginning of a game.
+One Team card may be played at the beginning of a game.
 ## Student Cards
 Student cards have a yellow border and a `S` in their tag.
+
+Students have one or more Skills and may have an Effect.
+
+The Skills are:
+- Design
+- Programming
+- Pneumatics
+- Swerve
+- Climbing
+- Shooting
+
+Student cards are used to summon Robots.
+
+
 ## Mentor Cards
 Mentor cards have a green border and a `M` in their tag.
+
+Mentor cards have one or more permanent Effects.
 ## Event Cards
 Event cards have a purple border and a `E` in their tag.
+
+Event cards are similar to Mentor cards, but they have temporary Effects and are retired when their Effects run out.
 ## Robot Cards
 Robot cards have a red border and a `R` in their tag.
+
+A Robot card may only be played if there are students in the Student Body with skills matching the Attributes on the Robot card.
+When a Robot card is played, the students used to create it are placed under it and form its Drive Team.
+When a Robot card is retired, one student in the Drive Team must be retired as well. The remaining students on the Drive Team are returned to the Student Body.
+
+Robots are used for scoring.
+
+
+
+Decks:
+Each player in a game of FRC: The Card Game must have a deck with 30-40 cards as well as one team card. 
+You may have as many other cards as you want, but you may not have more than three copies of a card in one deck.
+
+
+
+Gameplay:
+At the beginning of a game of FRC: The Card Game, each player is assigned 4000 points and begins the game with playing their team card as well as drawing 4 cards from the top of their deck. A coin is flipped to determine whose turn goes first.
+The player who goes first skips the draw and scoring phases of their first turn
+
+Each turn of FRC: The Card Game has 5 phases
+Draw Phase: The turn player draws one card.
+Median Phase: Nothing specific occurs, but it exists for card effects that activate or end during this specific phase.
+Main Phase: This is the phase where you can perform most of your actions.
+Scoring Phase: If you want to attack , this is when you do it.
+End Phase: The turn player ends their turn.
+
+Draw Phase:
+During the draw phase, a player may draw a single card from the top of their deck(unless otherwise stated)
+
+Median Phase:
+Nothing occurs during the median phase unless a card effect(s) specifically states that it activates/terminates during the median phase of ___’s turn.
+
+Main Phase:
+During the main phase of a player’s turn, the player may lay cards on their side of the playing field. You may play as many Mentor and/or event cards as you want assuming there is an open place on the field for it. You are only allowed to play one student card once per turn(unless otherwise stated). You are allowed to play as many robot cards as you want on your turn so long as its build requirements are met and there is an open space for it on the playing field.
+
+Scoring Phase:
+During the Scoring phase, a player may choose to play offense against the opposing player with the following rules:
+You must have a robot(s) on the field with the capability of scoring and it is an offensive position
+
+You may score on any robot on your opponent's side of the field
+
+If you score on an opponent’s robot that is in an offensive position and your robot’s offensive stat is higher than their offense, their robot is retired and the difference of the two robot’s offense stats is subtracted from the  other player’s points.
+
+If you score on an opponent’s robot that is in a defensive position and your robot’s offensive stat is higher than their defense, their robot is retired but no points are deducted.
+
+If you score on an opponent’s robot that is in a offensive or defensive position and your robot’s offensive stat is lower than their respective stat, your robot is retired and the difference of the two robot’s offense stats is subtracted from the your points
+
+If scoring occurs and the applicable stats of the two robots are equal, neither robots are retired and no points are deducted
+
+If you attempt to score and there are no robot(s) on your opponent's side of the field then your robot’s offensive stat is subtracted from your opponent’s points
+
+Each of your robots may only attempt to score once during your scoring phase
+
+If a player’s score reaches or drops below 0(during the scoring phase or otherwise), the game is over and the player with no remaining points loses.
+
+End Phase:
+During the end phase, all other phases are completed and cards that activate/retire during this phase do so. If you end your turn with more than 8 cards, you must discard from your hand until only 8 cards remain. Your turn is now completed and your opponent begins his draw phase.
+
+
+
 
 Name: The name of the student, mentor, robot, team, etc.
 Photo: A photo of the student, mentor, robot, team, etc.
