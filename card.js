@@ -59,7 +59,7 @@ function roundRect(ctx,color,left,top,right,bottom,r,r2=r){
   ctx.fill('evenodd');
 }
 
-function makeCard(cardColor,type,name,cardImg){
+function makeCard(cardColor,type,name,cardImg,desc){
   var typeLetter=typeLetters[type];
   var typeColor=typeColors[type];
 
@@ -90,6 +90,7 @@ function makeCard(cardColor,type,name,cardImg){
   // description
   roundRect(ctx,shade(cardColor),outerBorder,2*h/3,w-outerBorder,h-outerBorder,radius);
   roundRect(ctx,cardColor,outerBorder,2*h/3,w-outerBorder,h-outerBorder,radius,radius2);
+  drawText(ctx,desc,textH*0.8,outerBorder*2.5,2*h/3+outerBorder*1.5,w-outerBorder*5,h/3-outerBorder*5);
 
   // name
   roundRect(ctx,shade(cardColor),outerBorder*2,outerBorder*2,3*w/5,outerBorder*2+thinBorder*2+textH*2,textH+thinBorder);
@@ -131,6 +132,8 @@ function generate(){
   var cardColor=colorinput.value;
   var nameinput=document.querySelector('input.name');
   var name=nameinput.value;
+  var descinput=document.querySelector('textarea.desc');
+  var desc=descinput.value;
   var cardImg = document.createElement('img');
   cardImg.crossOrigin='anonymous';
   var urlinput=document.querySelector('input.url');
@@ -140,7 +143,7 @@ function generate(){
   }
 
   cardImg.addEventListener('load',()=>{
-    var imageData=makeCard(cardColor,type,name,cardImg);
+    var imageData=makeCard(cardColor,type,name,cardImg,desc);
 
     cardimage.src = imageData;
     carddownload.href = imageData.replace("image/png", "image/octet-stream"); //Convert image to 'octet-stream' (Just a download, really)
@@ -148,3 +151,42 @@ function generate(){
 }
 
 button.addEventListener('click',generate);
+
+
+// https://stackoverflow.com/a/16599668
+function getLines(ctx, text, maxWidth) {
+    var words = text.split(" ");
+    var lines = [];
+    var currentLine = words[0];
+
+    for (var i = 1; i < words.length; i++) {
+        var word = words[i];
+        var width = ctx.measureText(currentLine + " " + word).width;
+        if (width < maxWidth) {
+            currentLine += " " + word;
+        } else {
+            lines.push(currentLine);
+            currentLine = word;
+        }
+    }
+    lines.push(currentLine);
+    return lines;
+}
+
+// https://stackoverflow.com/questions/2936112/text-wrap-in-a-canvas-element#comment79378090_16599668
+function getLinesForParagraphs(ctx, text, maxWidth) {
+  return text.split("\n").map(para => getLines(ctx, '- '+para, maxWidth)).reduce((a, b) => a.concat(b),[]);
+}
+
+function drawText(ctx,text,textH,x,y,width,height){
+  ctx.font = textH+"px  sans";
+  var lines=getLinesForParagraphs(ctx,text,width);
+
+  ctx.fillStyle=black;
+  for(var i = 0; i < lines.length; i++){
+    var line=lines[i];
+    var dy=textH+i*textH*1.2;
+    var w = ctx.measureText(line).width;
+    ctx.fillText(line, x+width/2-w/2, y+dy);
+  }
+}
