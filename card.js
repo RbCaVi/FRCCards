@@ -116,19 +116,35 @@ function makeCard(cardColor,type,name,cardImg){
   return imageData;
 }
 
-var cardColor=red;
-var type='team'
-var name='All Wired Up';
-var cardImg = document.createElement('img');
-cardImg.crossOrigin='anonymous';
-cardImg.src='https://cdn.discordapp.com/avatars/953758541666209852/bef0d0db32303ff9587ad1e313e2cc23.webp';
+var cardimage=document.querySelector('img.card');
+var carddownload=document.querySelector('a.download');
+var button=document.querySelector('button.generate');
 
-cardImg.addEventListener('load',()=>{
-  imageData=makeCard(cardColor,type,name,cardImg);
+function generate(){
+  var typebuttons=document.querySelectorAll('input.typepicker');
+  for (var i = typebuttons.length - 1; i >= 0; i--) {
+    if(typebuttons[i].checked){
+      var type=typebuttons[i].id;
+    }
+  }
+  var colorinput=document.querySelector('input.color');
+  var cardColor=colorinput.value;
+  var nameinput=document.querySelector('input.name');
+  var name=nameinput.value;
+  var cardImg = document.createElement('img');
+  cardImg.crossOrigin='anonymous';
+  var urlinput=document.querySelector('input.url');
+  cardImg.src=urlinput.value;
+  if(urlinput.value.length==0){
+    cardImg.src='https://cdn.discordapp.com/avatars/953758541666209852/bef0d0db32303ff9587ad1e313e2cc23.webp';
+  }
 
-  var img = document.createElement('img');
-  img.src = imageData;
-  //a.href = imageData.replace("image/png", "image/octet-stream"); //Convert image to 'octet-stream' (Just a download, really)
-  document.querySelector('body').appendChild(img);
-})
+  cardImg.addEventListener('load',()=>{
+    var imageData=makeCard(cardColor,type,name,cardImg);
 
+    cardimage.src = imageData;
+    carddownload.href = imageData.replace("image/png", "image/octet-stream"); //Convert image to 'octet-stream' (Just a download, really)
+  });
+}
+
+button.addEventListener('click',generate);
