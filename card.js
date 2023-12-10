@@ -183,8 +183,13 @@ function getLinesForParagraphs(ctx, text, maxWidth) {
 }
 
 function drawText(ctx,text,textH,x,y,width,height){
-  ctx.font = textH+"px  sans";
+  ctx.font = textH+"px sans";
   var lines=getLinesForParagraphs(ctx,text,width);
+  while(lines.length*textH>height){
+    textH*=0.9;
+    ctx.font = textH+"px sans";
+    var lines=getLinesForParagraphs(ctx,text,width);
+  }
 
   ctx.fillStyle=black;
   for(var i = 0; i < lines.length; i++){
