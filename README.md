@@ -170,7 +170,7 @@ Draw Phase:
 During the draw phase, a player may draw a single card from the top of their deck(unless otherwise stated)
 
 Median Phase:
-Nothing occurs during the median phase unless a card effect(s) specifically states that it activates/terminates during the median phase of ___’s turn.
+Nothing occurs during the median phase unless a card effect(s) specifically states that it activates/terminates during the median phase of \_\_\_’s turn.
 
 Main Phase:
 During the main phase of a player’s turn, the player may lay cards on their side of the playing field. You may play as many Mentor and/or event cards as you want assuming there is an open place on the field for it. You are only allowed to play one student card once per turn(unless otherwise stated). You are allowed to play as many robot cards as you want on your turn so long as its build requirements are met and there is an open space for it on the playing field.
